@@ -8,6 +8,9 @@ class TicTacToe:
               '147','258','369',
               '159','357']
     lines={}
+
+    gsprob=1.0 # probability that the computer will use the "optimal" strategy;
+    # Can be changed on the command line.
     
     def __init__(self):
         # Start by allocating the grid and doing initial setup
@@ -51,7 +54,8 @@ class TicTacToe:
 
     @property
     def checkGrid(self):
-        # Checks for win conditions
+        """ Checks grid for win conditions.
+            Returns True if someone has won."""
         for i in self.lines.keys():
             if self.lines[i][1]==3:
                 print("X has won!")
